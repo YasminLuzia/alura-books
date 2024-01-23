@@ -8,3 +8,5 @@ Keywords:
 - create-react-app
 - npm start
 - Styled Components
+- Global Style
+- Component based CSS
