@@ -22,9 +22,26 @@ const Subtitle = styled.h3`
     font-weight: 500;
     margin-bottom: 40px;
 `
+const Result = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    p {
+        width: 200px;
+    }
+    img {
+        width: 100px;
+    }
+    &:hover {
+        border: 1px solid white;
+    }
+`
 
 function Search() {
-    const [searchedBooks, setSearchedBooks] = useState()
+    const [searchedBooks, setSearchedBooks] = useState([])
+
     return (
         <SearchContainer>
             <Title>Já sabe por onde começar?</Title>
@@ -34,7 +51,12 @@ function Search() {
                 const searchResult = books.filter(book => book.name.includes(search))
                 setSearchedBooks(searchResult)
             }} />
-
+            {searchedBooks.map(book => (
+                <Result>
+                    <img src={book.src} alt="" />
+                    <p>{book.name}</p>
+                </Result>
+            )) }
         </SearchContainer>
     )
 }
