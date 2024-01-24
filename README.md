@@ -7,7 +7,9 @@ Keywords:
 - JSX
 - create-react-app
 - npm start
-- Styled Components
+
+- Maps
+- State
 - Global Style
 - Component based CSS
 - Props
