@@ -10,3 +10,4 @@ Keywords:
 - Styled Components
 - Global Style
 - Component based CSS
+- Props
