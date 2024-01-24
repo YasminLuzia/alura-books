@@ -1,5 +1,7 @@
 import { books } from './latestReleasesData'
 import { Title } from '../Title'
+import SuggestedCard from '../SuggestedCard'
+import bookImage from '../../img/book2.png'
 import styled from 'styled-components'
 
 const LatestReleasesContainer = styled.section`
@@ -24,11 +26,12 @@ function LatestReleases() {
                 {
                     books.map(
                         book => (
-                            <img src={book.src} alt='' />
+                            <img src={book.src} alt='Capa do livro' />
                         )
                     )
                 }
             </NewBooksContainer>
+            <SuggestedCard title='Talvez você se interesse por' subtitle='Angular 11' description='Contruindo uma aplicação com a plataforma Google.' image={bookImage}/>
         </LatestReleasesContainer>
     )
 }

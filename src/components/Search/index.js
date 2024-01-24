@@ -1,6 +1,6 @@
-import Input from "../Input"
-import styled from "styled-components"
-import { useState } from "react"
+import Input from '../Input'
+import styled from 'styled-components'
+import { useState } from 'react'
 import { books } from './searchData'
 
 const SearchContainer = styled.section`
@@ -46,14 +46,14 @@ function Search() {
         <SearchContainer>
             <Title>Já sabe por onde começar?</Title>
             <Subtitle>Encontre seu livro em nossa estante.</Subtitle>
-            <Input placeholder="Escreva sua próxima leitura" onBlur={event => {
+            <Input placeholder='Escreva sua próxima leitura' onBlur={event => {
                 const search = event.target.value
                 const searchResult = books.filter(book => book.name.includes(search))
                 setSearchedBooks(searchResult)
             }} />
             {searchedBooks.map(book => (
                 <Result>
-                    <img src={book.src} alt="" />
+                    <img src={book.src} alt='Capa do livro' />
                     <p>{book.name}</p>
                 </Result>
             )) }
