@@ -1,7 +1,7 @@
 import Input from '../Input'
 import styled from 'styled-components'
-import { useState } from 'react'
-import { books } from './searchData'
+import { getBooks } from '../../services/books'
+import { useEffect, useState } from 'react'
 
 const SearchContainer = styled.section`
     background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
@@ -41,6 +41,16 @@ const Result = styled.div`
 
 function Search() {
     const [searchedBooks, setSearchedBooks] = useState([])
+    const [books, setBooks] = useState([])
+
+    useEffect(() => {
+        fetchBooks()
+    }, [])
+
+    async function fetchBooks() {
+        const booksAPI = await getBooks()
+        setBooks(booksAPI)
+    }
 
     return (
         <SearchContainer>
@@ -56,7 +66,7 @@ function Search() {
                     <img src={book.src} alt='Capa do livro' />
                     <p>{book.name}</p>
                 </Result>
-            )) }
+            ))}
         </SearchContainer>
     )
 }
