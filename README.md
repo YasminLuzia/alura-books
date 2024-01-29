@@ -1,5 +1,5 @@
 # alura-books
-A book website to cover the basics of a fullstack React/JS project
+A book website to cover the basics of a fullstack React/JS project, this is the front-end part
 
 Keywords:
 - Front-end
